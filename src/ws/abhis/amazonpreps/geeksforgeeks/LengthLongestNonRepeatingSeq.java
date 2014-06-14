@@ -20,16 +20,22 @@ public class LengthLongestNonRepeatingSeq {
 					globalMax = tempMap.size();
 				}
 			} else {
-				tempMap.clear();
+				//tempMap.clear();
+				tempMap.put(sequence[i], 1);
 			}
+		}
+		if (tempMap.size() > globalMax) {
+			globalMax = tempMap.size();
 		}
 		return globalMax;
 	}
 	
 	public static void main(String[] args) {
 		LengthLongestNonRepeatingSeq obj = new LengthLongestNonRepeatingSeq();
+		String two = "ABCAD";
+		String one = "GEEKSFORGEEKS";
 		char[] arr = {'A','B','D','E','F','G','A','B','E','F'};
-		int globalMax = obj.solution(arr);
+		int globalMax = obj.solution(one.toCharArray());
 		System.out.println(globalMax);
 	}
 }
